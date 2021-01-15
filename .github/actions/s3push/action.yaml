@@ -20,5 +20,5 @@ runs:
       shell: bash
     - run: mkdir .aws && echo "[default]\nAWS_ACCESS_KEY_ID=${{ inputs.key }}\nAWS_SECRET_ACCESS_KEY=${{ inputs.secret }}" > .aws/credentials
       shell: bash
-    - run: docker run --rm -t -e AWS_REGION=eu-west-2 -v ./.aws:/root/.aws -v .:/work  ckemper/gha-s3push -b buzz-kemper-arq -f $filename.zip
+    - run: docker run --rm -t -e AWS_REGION=eu-west-2 -v `pwd`.aws:/root/.aws -v `pwd`:/work  ckemper/gha-s3push -b buzz-kemper-arq -f $filename.zip
       shell: bash
