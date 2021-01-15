@@ -9,3 +9,5 @@ jobs:
       - uses: ./.github/actions/s3push
         with:
           ref: $GITHUB_REF
+          key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

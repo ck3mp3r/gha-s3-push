@@ -20,5 +20,5 @@ runs:
       shell: bash
     - run: zip -r ../$filename.zip . -x ".*" 
       shell: bash
-    - run: docker run -it -e AWS_REGION=eu-west-2 -v ../.aws:/root/.aws -v ../:/work  ckemper/gha-s3push -b buzz-kemper-arq -f $filename.zip
+    - run: docker run --rm -t -e AWS_REGION=eu-west-2 -v ../.aws:/root/.aws -v ../:/work  ckemper/gha-s3push -b buzz-kemper-arq -f $filename.zip
       shell: bash
