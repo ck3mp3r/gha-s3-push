@@ -1,0 +1,8 @@
+name: s3-source-deploy
+on: [push]
+jobs:
+  push-to-s3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ls -la
