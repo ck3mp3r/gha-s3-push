@@ -14,7 +14,7 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: filename=`basename ${{ inputs.ref }}`
+    - run: export filename=`basename ${{ inputs.ref }}`
       shell: bash
     - run: zip -r ../${filename}.zip . -x ".*" && mv ../${filename}.zip .
       shell: bash
