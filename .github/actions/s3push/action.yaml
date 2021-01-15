@@ -8,5 +8,5 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: echo basename ${{ inputs.ref }}
+    - run: echo `basename ${{ inputs.ref }}`
       shell: bash
