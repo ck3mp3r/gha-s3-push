@@ -1,0 +1,11 @@
+# action.yaml
+name: 'S3 Push'
+description: 'create zip from source code and push to specified s3 location'
+inputs:
+  ref:
+    description: 'git ref'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - run: echo basename ${{ inputs.ref }}
