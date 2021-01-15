@@ -5,5 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: zip -r ../$GITHUB_REF.zip . -x ".*" 
+      - run: zip -r ../test.zip . -x ".*" 
       - run: cd ../ && ls -lah
+      - uses: ./.github/actions/s3push
+        with:
+          ref: $GITHUB_REF
