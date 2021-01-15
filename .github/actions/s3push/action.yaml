@@ -18,5 +18,5 @@ runs:
       shell: bash
     - run: zip -r ../`basename ${{ inputs.ref }}`.zip . -x ".*" && mv ../`basename ${{ inputs.ref }}`.zip .
       shell: bash
-    - run: docker run --rm -t -e AWS_ACCESS_KEY_ID=${{ inputs.key }} -e AWS_SECRET_ACCESS_KEY=${{ inputs.secret }} -e AWS_REGION=eu-central-1 -v `pwd`.aws:/root/.aws -v `pwd`:/work  ckemper/gha-s3push -b buzz-kemper-arq -f `basename ${{ inputs.ref }}`.zip
+    - run: docker run --rm -t -e AWS_ACCESS_KEY_ID=${{ inputs.key }} -e AWS_SECRET_ACCESS_KEY=${{ inputs.secret }} -e AWS_REGION=eu-central-1 -v `pwd`:/work  ckemper/gha-s3push -b buzz-kemper-arq -f `basename ${{ inputs.ref }}`.zip
       shell: bash
