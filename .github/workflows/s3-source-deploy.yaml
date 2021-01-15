@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: zip -r ../test.zip . -x ".*" 
+      - run: zip -r ../$GITHUB_REF.zip . -x ".*" 
       - run: cd ../ && ls -lah
