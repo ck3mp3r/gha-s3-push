@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: zip ../test.zip .
+      - run: zip -r ../test.zip .
       - run: cd ../ && ls -lah
