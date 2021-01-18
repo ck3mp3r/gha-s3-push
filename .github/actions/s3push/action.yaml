@@ -13,5 +13,8 @@ runs:
   steps:
     - run: zip -r ../TREK.zip . -x ".*" && mv ../TREK.zip .
       shell: bash
-    - run: ITEMNAME=`basename $GITHUB_REF` && refs='main develop action-test' && if [[ $refs = $ITEMNAME ]]; then ITEMNAME="release" fi && docker run --rm -t -e AWS_ACCESS_KEY_ID=${{ inputs.key }} -e AWS_SECRET_ACCESS_KEY=${{ inputs.secret }} -e AWS_REGION=eu-central-1 -v `pwd`:/aws  amazon/aws-cli s3 cp --metadata "CommitId=$GITHUB_SHA,BranchOrTag=$GITHUB_REF" TREK.zip s3://buzz-kemper-arq/bg-trek-deployments/$ITEMNAME/TREK.zip
+    - run: |
+        echo "hello"
+        echo "hello again"
+
       shell: bash
