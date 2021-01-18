@@ -1,9 +1,9 @@
 name: s3-source-deploy
-on:
-  push:
-    branches:
-      - main
-      - develop
+on: [push]
+#  push:
+#    branches:
+#      - main
+#      - develop
 
   release:
     types:
@@ -17,6 +17,5 @@ jobs:
       - run: cd ../ && ls -lah
       - uses: ./.github/actions/s3push
         with:
-          ref: $GITHUB_REF
           key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           secret: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
