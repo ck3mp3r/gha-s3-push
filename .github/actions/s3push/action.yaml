@@ -15,7 +15,7 @@ runs:
       shell: bash
     - run: |
         ITEMNAME=`basename $GITHUB_REF`
-        refs='main develop action-test'
+        refs='main develop'
         if [[ $refs = $ITEMNAME ]]; 
           then ITEMNAME="release" 
         fi
