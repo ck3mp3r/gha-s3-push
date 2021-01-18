@@ -1,5 +1,14 @@
 name: s3-source-deploy
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+  release:
+    types:
+      - created
+
 jobs:
   push-to-s3:
     runs-on: ubuntu-latest
